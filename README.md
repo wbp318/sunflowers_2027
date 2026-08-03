@@ -11,6 +11,22 @@ Sunflowers grow well here, but there is **no local processing or buyer** — thi
 ## How the Viserion program works
 
 ```mermaid
+%%{init: {
+  "theme": "base",
+  "themeVariables": {
+    "fontSize": "18px",
+    "fontFamily": "Segoe UI, Avenir, sans-serif",
+    "textColor": "#20261f",
+    "primaryColor": "#f5e6c4",
+    "primaryBorderColor": "#b8841c",
+    "primaryTextColor": "#20261f",
+    "lineColor": "#7a8076",
+    "clusterBkg": "#f7f4ea",
+    "clusterBorder": "#b8841c",
+    "edgeLabelBackground": "#f7f4ea"
+  },
+  "flowchart": { "useMaxWidth": false, "nodeSpacing": 55, "rankSpacing": 65, "curve": "basis" }
+}}%%
 flowchart TD
     subgraph LEGEND[Legend]
         direction LR

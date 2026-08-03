@@ -18,79 +18,82 @@
     --gold-ink:#8A6210; --neg:#B4452E; }
 
   *{box-sizing:border-box}
-  html{scroll-snap-type:y mandatory; scroll-behavior:smooth}
+  html{scroll-snap-type:y proximity; scroll-behavior:smooth}
   @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
   body{margin:0; background:var(--paper); color:var(--ink);
-    font:16px/1.55 "Avenir Next","Segoe UI",system-ui,sans-serif;}
+    font:15.5px/1.55 "Avenir Next","Segoe UI",system-ui,sans-serif;}
   .slide{min-height:100vh; scroll-snap-align:start; display:flex; flex-direction:column;
-    justify-content:center; padding:4.5rem clamp(1.25rem,6vw,6rem); max-width:1080px; margin:0 auto;}
-  .eyebrow{font-size:.75rem; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-ink);
-    font-weight:600; margin:0 0 .9rem}
-  h1,h2{font-family:Charter,Georgia,"Iowan Old Style",serif; text-wrap:balance; margin:0 0 1rem; line-height:1.12}
-  h1{font-size:clamp(2.2rem,5.5vw,3.6rem); font-weight:700}
-  h2{font-size:clamp(1.6rem,3.6vw,2.4rem); font-weight:700}
-  p.lead{font-size:1.15rem; color:var(--ink-2); max-width:62ch; margin:0 0 1.5rem}
-  p{max-width:65ch}
-  .rule{border:none; border-top:2px solid var(--gold); width:64px; margin:0 0 1.4rem}
-  table{border-collapse:collapse; width:100%; font-size:.95rem}
-  th{font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-3);
-    text-align:left; font-weight:600; padding:.5rem .75rem .4rem 0; border-bottom:1px solid var(--line)}
-  td{padding:.55rem .75rem .55rem 0; border-bottom:1px solid var(--line); vertical-align:top}
+    justify-content:center; padding:4rem clamp(1.25rem,5vw,5rem); max-width:1120px; margin:0 auto;}
+  .eyebrow{font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-ink);
+    font-weight:600; margin:0 0 .8rem}
+  h1,h2{font-family:Charter,Georgia,"Iowan Old Style",serif; text-wrap:balance; margin:0 0 .9rem; line-height:1.12}
+  h1{font-size:clamp(2.2rem,5.5vw,3.4rem); font-weight:700}
+  h2{font-size:clamp(1.5rem,3.4vw,2.2rem); font-weight:700}
+  h3{font-size:1rem; margin:1.1rem 0 .4rem}
+  p.lead{font-size:1.1rem; color:var(--ink-2); max-width:68ch; margin:0 0 1.2rem}
+  p{max-width:70ch}
+  .rule{border:none; border-top:2px solid var(--gold); width:64px; margin:0 0 1.2rem}
+  table{border-collapse:collapse; width:100%; font-size:.9rem}
+  th{font-size:.68rem; letter-spacing:.09em; text-transform:uppercase; color:var(--ink-3);
+    text-align:left; font-weight:600; padding:.45rem .7rem .35rem 0; border-bottom:1px solid var(--line)}
+  td{padding:.45rem .7rem .45rem 0; border-bottom:1px solid var(--line); vertical-align:top}
   td.num,th.num{text-align:right; font-variant-numeric:tabular-nums; padding-right:0}
-  .grid2{display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:1.5rem}
-  .card{background:var(--card); border:1px solid var(--line); border-radius:6px; padding:1.25rem 1.4rem}
-  .card h3{margin:0 0 .5rem; font-size:1.02rem}
-  .card p{font-size:.92rem; color:var(--ink-2); margin:.35rem 0}
-  .tag{display:inline-block; font-size:.68rem; letter-spacing:.1em; text-transform:uppercase;
-    font-weight:700; padding:.15rem .5rem; border-radius:3px; margin-bottom:.6rem}
+  tr.total td{font-weight:700; border-top:2px solid var(--line)}
+  .grid2{display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:1.25rem}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:6px; padding:1.1rem 1.25rem}
+  .card h3{margin:0 0 .45rem; font-size:1rem}
+  .card p, .card li{font-size:.88rem; color:var(--ink-2); margin:.3rem 0}
+  .card ul{margin:.4rem 0; padding-left:1.1rem}
+  .tag{display:inline-block; font-size:.66rem; letter-spacing:.1em; text-transform:uppercase;
+    font-weight:700; padding:.15rem .5rem; border-radius:3px; margin-bottom:.55rem}
   .tag.rec{background:var(--gold); color:var(--paper)}
   .tag.later{background:transparent; color:var(--ink-3); border:1px solid var(--line)}
-  .big{font-family:Charter,Georgia,serif; font-size:clamp(2.4rem,6vw,4rem); font-weight:700;
+  .big{font-family:Charter,Georgia,serif; font-size:clamp(2.2rem,5.5vw,3.6rem); font-weight:700;
     font-variant-numeric:tabular-nums; line-height:1}
   .big small{font-size:.4em; color:var(--ink-2); font-weight:400; font-family:"Avenir Next","Segoe UI",system-ui,sans-serif}
-  .stat-row{display:flex; flex-wrap:wrap; gap:2.5rem; margin:1.5rem 0}
-  .stat .cap{font-size:.78rem; color:var(--ink-2); margin-top:.35rem; max-width:20ch}
+  .stat-row{display:flex; flex-wrap:wrap; gap:2.25rem; margin:1.3rem 0}
+  .stat .cap{font-size:.76rem; color:var(--ink-2); margin-top:.3rem; max-width:22ch}
 
-  /* charts */
-  .chart{margin:1.75rem 0 .5rem}
-  .chart .ctitle{font-size:.9rem; font-weight:600; margin-bottom:1rem}
-  .brow{display:grid; grid-template-columns:11rem 1fr; align-items:center; gap:.75rem; margin:.55rem 0}
-  .brow .blab{font-size:.85rem; color:var(--ink-2); text-align:right}
-  .btrack{position:relative; height:22px}
+  .chart{margin:1.4rem 0 .4rem}
+  .chart .ctitle{font-size:.88rem; font-weight:600; margin-bottom:.9rem}
+  .brow{display:grid; grid-template-columns:11rem 1fr; align-items:center; gap:.7rem; margin:.5rem 0}
+  .brow .blab{font-size:.82rem; color:var(--ink-2); text-align:right}
+  .btrack{position:relative; height:20px}
   .bfill{position:relative; height:100%; border-radius:0 4px 4px 0; min-width:2px}
   .bfill.gold{background:var(--gold)} .bfill.teal{background:var(--teal)} .bfill.neg{background:var(--neg)}
   .bval{position:absolute; left:100%; top:50%; transform:translate(8px,-50%);
-    font-size:.85rem; font-weight:600; font-variant-numeric:tabular-nums; white-space:nowrap; color:var(--ink)}
+    font-size:.82rem; font-weight:600; font-variant-numeric:tabular-nums; white-space:nowrap; color:var(--ink)}
   .btrack:hover .tip{opacity:1}
   .tip{opacity:0; transition:opacity .12s; pointer-events:none; position:absolute; bottom:calc(100% + 6px);
-    left:0; background:var(--ink); color:var(--paper); font-size:.75rem; padding:.3rem .55rem;
+    left:0; background:var(--ink); color:var(--paper); font-size:.74rem; padding:.3rem .55rem;
     border-radius:4px; white-space:nowrap; z-index:2}
-  .legend{display:flex; gap:1.25rem; font-size:.8rem; color:var(--ink-2); margin-top:.75rem}
+  .legend{display:flex; gap:1.2rem; font-size:.78rem; color:var(--ink-2); margin-top:.7rem}
   .legend .sw{display:inline-block; width:10px; height:10px; border-radius:2px; margin-right:.4rem; vertical-align:-1px}
-  .note{font-size:.8rem; color:var(--ink-3); max-width:70ch}
+  .note{font-size:.78rem; color:var(--ink-3); max-width:76ch}
 
   .counter{position:fixed; bottom:1rem; right:1.25rem; font-size:.75rem; color:var(--ink-3);
     font-variant-numeric:tabular-nums; background:var(--paper); padding:.2rem .5rem; border-radius:4px}
   .hint{position:fixed; bottom:1rem; left:1.25rem; font-size:.75rem; color:var(--ink-3)}
-  ul{padding-left:1.2rem} li{margin:.45rem 0; max-width:62ch}
+  ul{padding-left:1.2rem} li{margin:.4rem 0; max-width:68ch}
   .pos{color:var(--teal); font-weight:600} .negt{color:var(--neg); font-weight:600}
   a{color:var(--gold-ink)}
   :focus-visible{outline:2px solid var(--gold); outline-offset:2px}
-  .twocol{display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:2rem}
+  .twocol{display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:1.75rem}
   .scrollx{overflow-x:auto}
 </style>
 
 <!-- 1 · Title -->
 <section class="slide" id="s1">
-  <p class="eyebrow">Proposal · Viserion Grain — Lake Providence, LA · August 2026</p>
+  <p class="eyebrow">Proposal · Viserion Grain — Lake Providence, LA (East Carroll Parish) · August 2026</p>
   <h1>The Delta's First Sunflower Delivery Point</h1>
-  <p class="lead">A low-capital program that puts fee income on this facility's slack late-summer window, builds grower originations in East Carroll Parish, and holds a barge card no competitor can match.</p>
+  <p class="lead">A low-capital program that puts fee income on this facility's slack late-summer window, builds grower originations in East Carroll Parish, and holds a barge card no competitor can match. Structured so Viserion carries <strong>zero price risk in year one</strong>.</p>
   <div class="stat-row">
-    <div class="stat"><div class="big">$25–75k<small> setup</small></div><div class="cap">one-time capital, mostly procedure &amp; screens</div></div>
-    <div class="stat"><div class="big">~$0.80<small> /cwt</small></div><div class="cap">contribution margin, toll model</div></div>
-    <div class="stat"><div class="big">0<small> price risk</small></div><div class="cap">year-one structure: Viserion never owns the seed</div></div>
+    <div class="stat"><div class="big">$25–75k<small> setup</small></div><div class="cap">one-time: screens, segregation protocol, dryer procedure, spares</div></div>
+    <div class="stat"><div class="big">~$0.80<small> /cwt</small></div><div class="cap">contribution margin, toll model ($1.35 fees − $0.55 variable)</div></div>
+    <div class="stat"><div class="big">$128k<small> /yr</small></div><div class="cap">contribution at 10,000-acre scale, before merchandising margin</div></div>
+    <div class="stat"><div class="big">0<small> price risk</small></div><div class="cap">year one: growers hold act-of-God contracts; Viserion never owns the seed</div></div>
   </div>
-  <p class="note">Prepared by William, Tap Parker Farms · builds on a verified multi-source feasibility study (July 2026)</p>
+  <p class="note">Prepared by William, Tap Parker Farms · builds on a fact-checked multi-source feasibility study (July 2026: 22 sources, 76 claims extracted, 25 adversarially verified — refuted claims excluded). Full model: VISERION_PLAN.md.</p>
 </section>
 
 <!-- 2 · The gap -->
@@ -98,14 +101,20 @@
   <p class="eyebrow">The opportunity</p>
   <h2>Sunflowers grow here. Nobody buys them here.</h2>
   <hr class="rule">
-  <p class="lead">The nearest buyer of any kind is ~600 road miles away. That single gap — no local delivery point — is what keeps a workable crop out of the Delta. Whoever becomes the delivery point owns the origination.</p>
-  <div class="chart" role="img" aria-label="Distance from Lake Providence to nearest sunflower buyers: Red River Commodities Lubbock 600 miles, Lamar Colorado crush 750 miles, ADM and Cargill North Dakota 1100 miles">
-    <div class="ctitle">Road miles from Lake Providence to the nearest sunflower buyers</div>
-    <div class="brow"><span class="blab">Red River · Lubbock, TX</span><div class="btrack"><div class="bfill gold" style="width:54%"><span class="bval">~600 mi · birdseed</span></div><span class="tip">Closest plausible buyer — wildlife/birdseed plant</span></div></div>
-    <div class="brow"><span class="blab">Lamar, CO crush</span><div class="btrack"><div class="bfill gold" style="width:68%"><span class="bval">~750 mi</span></div><span class="tip">Oil crush plant</span></div></div>
-    <div class="brow"><span class="blab">ADM / Cargill, ND</span><div class="btrack"><div class="bfill gold" style="width:100%"><span class="bval">~1,100 mi</span></div><span class="tip">Main U.S. crush capacity</span></div></div>
+  <p class="lead">The northeast Louisiana Delta grows sunflowers well — but the nearest buyer of any kind is ~600 road miles away, and the main U.S. crush capacity is 1,100+ miles north. No local delivery point exists anywhere in the region. That single gap keeps a workable crop out of the Delta — and whoever closes it owns the origination.</p>
+  <div class="chart" role="img" aria-label="Distance from Lake Providence to nearest sunflower buyers: Red River Commodities Lubbock 600 miles, Lamar Colorado crush 750 miles, ADM and Cargill North Dakota 1100 miles, Red River Fargo 1100 plus miles">
+    <div class="ctitle">Road miles from Lake Providence to every plausible sunflower buyer</div>
+    <div class="brow"><span class="blab">Red River · Lubbock, TX</span><div class="btrack"><div class="bfill gold" style="width:54%"><span class="bval">~600 mi · birdseed/wildlife</span></div><span class="tip">Closest plausible buyer — wildlife-food plant; must confirm they'll contract Delta-grown seed</span></div></div>
+    <div class="brow"><span class="blab">Lamar, CO crush</span><div class="btrack"><div class="bfill gold" style="width:68%"><span class="bval">~750 mi · oil crush</span></div><span class="tip">Oil crush plant</span></div></div>
+    <div class="brow"><span class="blab">ADM Enderlin, ND</span><div class="btrack"><div class="bfill gold" style="width:100%"><span class="bval">~1,100 mi · main crush</span></div><span class="tip">With Cargill West Fargo, the core of US crush capacity</span></div></div>
+    <div class="brow"><span class="blab">CHS Fargo, ND</span><div class="btrack"><div class="bfill gold" style="width:100%"><span class="bval">~1,100 mi · confection/roasting</span></div><span class="tip">Nearest confection kernel & inshell roasting</span></div></div>
   </div>
-  <p class="note">Sources: NSA buyer directory, Red River Commodities facility list, AgMRC. Full citations in the feasibility report.</p>
+  <ul style="font-size:.9rem; margin-top:1rem">
+    <li><strong>Market-creation play, not plug-in:</strong> nobody serves this region — that is both the risk and the moat.</li>
+    <li>The <strong>NSA buyer directory</strong> (sunflowernsa.com/buyers, 15 categories) is the tool for lining up second outlets.</li>
+    <li>Growers within ~50 miles of Lake Providence — East Carroll, Madison, West Carroll parishes plus SE Arkansas and the Mississippi side of the river — currently have no reason to plant a single acre.</li>
+  </ul>
+  <p class="note">Sources: AgMRC sunflower profile · redriv.com facility list · chsinc.com · NSA buyer directory. Full citations in REPORT.md.</p>
 </section>
 
 <!-- 3 · Why this facility -->
@@ -113,155 +122,271 @@
   <p class="eyebrow">Why Viserion Lake Providence</p>
   <h2>The facility already has every piece the program needs</h2>
   <hr class="rule">
+  <p class="lead">Lake Providence is one of the 11 river elevators Viserion acquired from Zen-Noh (ex-Bunge) in July 2021 — a working Mississippi River terminal with truck receiving and barge loadout. The sunflower program is an <em>overlay</em> on existing assets, not a build.</p>
   <div class="scrollx"><table>
     <thead><tr><th>Already in place</th><th>What the program uses it for</th></tr></thead>
     <tbody>
-      <tr><td>Truck receiving, scales, grading</td><td>Delivery point for growers within ~50 miles</td></tr>
-      <tr><td>Grain dryers</td><td>Sunflower stores at 10% moisture (7–8% for summer carry)</td></tr>
-      <tr><td>Segregated bins</td><td>Identity-preserved high-oleic seed; one 100k-bu bin covers the whole pilot</td></tr>
-      <tr><td>Truck loadout</td><td>500-cwt loads to Lubbock or NSA-directory buyers</td></tr>
-      <tr><td><strong>Barge loadout on the Mississippi</strong></td><td>Export/Gulf option at ~¼ the truck freight — an edge nobody else in the region has</td></tr>
-      <tr><td>Merchandising desk</td><td>Basis and freight arbitrage once volume proves out</td></tr>
-      <tr><td>Aug–Sept slack window</td><td>Early-planted Delta sunflowers harvest <em>before</em> the corn/soybean rush</td></tr>
+      <tr><td>Truck receiving, scales, grading</td><td>Delivery point for growers within ~50 miles; standard FM/moisture docking schedule applies</td></tr>
+      <tr><td>Grain dryers</td><td>Sunflower must reach 10% moisture for winter storage, 7–8% for carry into summer (Louisiana heat makes NDSU's numbers conservative minimums)</td></tr>
+      <tr><td>Segregated bins</td><td>Identity-preserved high-oleic seed; sunflower's light test weight (28–32 lb/bu) means one ~100k-bu bin holds ~30,000 cwt — the entire pilot</td></tr>
+      <tr><td>Truck loadout</td><td>500-cwt (50,000 lb) loads to Lubbock or NSA-directory buyers; loads weight-limit before they cube out</td></tr>
+      <tr><td><strong>Barge loadout on the Mississippi</strong></td><td>Export/Gulf option at ~$0.75–1.00/cwt vs ~$3.60 truck — an edge no landlocked competitor can copy</td></tr>
+      <tr><td>Merchandising desk</td><td>Basis and freight arbitrage among Lubbock, crushers, and barge/export once volume proves out</td></tr>
+      <tr><td>Aug–Sept slack window</td><td>Early-planted Delta sunflowers harvest <em>before</em> the corn/soybean rush — fees land in an otherwise quiet month</td></tr>
     </tbody>
   </table></div>
-  <p style="margin-top:1.25rem">The only genuinely new operational requirement: <strong>daily dryer housekeeping</strong>. Sunflower fines are the documented fire risk (NDSU) — it's a cleaning discipline, not a capital project.</p>
+  <h3>The one new operational requirement: fines discipline</h3>
+  <p style="font-size:.92rem">Sunflower hairs/fibers rubbed off in handling are the documented dryer-fire hazard. NDSU (Hellevang): <em>"the fire hazard is not related to drying temperature, but rather to housekeeping and managing the dryer."</em> The control is <strong>daily dryer cleanout</strong> plus dust management at legs and transfer points — a written procedure and a checklist, not a capital project. Insurance underwriter review is Gate 3.</p>
 </section>
 
-<!-- 4 · Structures -->
+<!-- 4 · Assumptions -->
 <section class="slide" id="s4">
+  <p class="eyebrow">Model inputs</p>
+  <h2>Every assumption, on one slide</h2>
+  <hr class="rule">
+  <div class="scrollx"><table>
+    <thead><tr><th>Assumption</th><th>Value</th><th>Basis & status</th></tr></thead>
+    <tbody>
+      <tr><td>Reference price, high-oleic new crop</td><td class="num">$22.75/cwt delivered</td><td>Mid-Oct 2025 crusher bids ($22.70–22.80 cash; $22.20–23 with act-of-God clause) — still the standing reference Aug 2026. <strong>Re-pull NSA bids at contracting.</strong></td></tr>
+      <tr><td>Oil premium</td><td class="num">+2%/pt &gt; 40% oil</td><td>Industry standard; only oilseed that pays oil premiums. 45% oil ⇒ ~+$2.28/cwt ⇒ +$36/ac</td></tr>
+      <tr><td>Price volatility band</td><td class="num">$16.60–31.40/cwt</td><td>Observed 2021 drought swing — nearly a double inside one season</td></tr>
+      <tr><td>Yield, dryland Delta</td><td class="num">1,600 lb/ac (16 cwt)</td><td>Conservative planning figure; irrigated/high-management 2,000–2,200 lb</td></tr>
+      <tr><td>Truck freight to Lubbock (~600 mi)</td><td class="num">$3.60/cwt</td><td>$1,800/load ÷ 500 cwt. USDA S-Central Q1-26 rates ($4.72/mi @25mi, $3.70 @100, $3.02 @200) extrapolated past their 200-mi ceiling. <strong>Needs spot quote — Gate 2.</strong></td></tr>
+      <tr><td>Barge to Gulf</td><td class="num">~$0.75–1.00/cwt</td><td>Typical lower-Mississippi oilseed rates. <strong>Needs quote — Gate 2.</strong></td></tr>
+      <tr><td>Truckload / acreage equivalence</td><td class="num">500 cwt ≈ 31 ac</td><td>Weight-limited at 50,000 lb; sunflower at ~24 lb/cu-ft still hits weight before cube</td></tr>
+      <tr><td>Grower production cost, dryland</td><td class="num">~$250/ac</td><td>Seed $30 · fertility $70 · herbicide $40 · insecticide $15 · field ops $45 · harvest $40 · crop ins $10 — regional analog budget, not a quote</td></tr>
+      <tr><td>Storage moisture targets</td><td class="num">10% / 7–8%</td><td>NDSU Extension (winter / summer carry); confection 11%/10%</td></tr>
+      <tr><td>Elevator handling cost curve</td><td class="num">$0.27→$0.07/bu</td><td>OSU Extension: 1.75M→17.5M bu/yr throughput — dated, treat as shape-of-curve</td></tr>
+      <tr><td>Equipment pricing (Structure C)</td><td class="num">unknown</td><td><strong>Every internet price was refuted in verification</strong> — written vendor quotes only (MMCTECH Charlotte NC verified as real supplier)</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">All figures are planning estimates; the model's structure is the deliverable. Gates 1–2 replace the two most fragile numbers (price, freight) with signed/quoted reality before anyone commits.</p>
+</section>
+
+<!-- 5 · Structures -->
+<section class="slide" id="s5">
   <p class="eyebrow">Deal structure</p>
   <h2>Three ways in — start where the risk is zero</h2>
   <hr class="rule">
   <div class="grid2">
-    <div class="card"><span class="tag rec">2027 · Recommended</span>
-      <h3>A — Toll handling</h3>
-      <p>Growers hold act-of-God contracts directly with the buyer. Viserion never owns the seed — it charges receiving, drying, storage, and freight-coordination fees.</p>
-      <p><strong>Viserion risk:</strong> near zero. <strong>Return:</strong> fee income on idle capacity.</p></div>
-    <div class="card"><span class="tag later">2028</span>
+    <div class="card"><span class="tag rec">2027 · Recommended opener</span>
+      <h3>A — Toll handling (fee-for-service)</h3>
+      <ul>
+        <li>Growers sign act-of-God contracts <em>directly with the end buyer</em> before planting</li>
+        <li>Viserion never takes title — charges receiving, drying, storage, freight-coordination fees ($1.35/cwt stack)</li>
+        <li><strong>Viserion risk:</strong> near zero (operational only)</li>
+        <li><strong>Return:</strong> ~$0.80/cwt contribution on idle capacity</li>
+        <li><strong>Commitment needed:</strong> fee schedule + one segregated bin + drying protocol</li>
+      </ul></div>
+    <div class="card"><span class="tag later">2028 · after quality history</span>
       <h3>B — Merchandising</h3>
-      <p>Viserion posts a local bid, owns the seed, sells delivered-Lubbock or via barge, and keeps basis + freight margin on top of fees.</p>
-      <p><strong>Adds:</strong> historically $0.20–0.50/cwt where buyers exist. <strong>Costs:</strong> market risk in a thin, one-buyer market.</p></div>
-    <div class="card"><span class="tag later">2029 · evaluate</span>
-      <h3>C — Birdseed line JV</h3>
-      <p>At ≥5,000 acres, add cleaning/bagging at the elevator — bagged black-oil birdseed and deer-plot seed sold regionally, erasing the freight penalty entirely.</p>
-      <p><strong>Capital:</strong> $150–500k placeholder, pending written vendor quotes.</p></div>
+      <ul>
+        <li>Viserion posts a local bid, owns the seed, sells delivered-Lubbock / barge / crushers</li>
+        <li>Keeps basis + freight margin on top of the fee stack — historically <strong>$0.20–0.50/cwt</strong> where elevators arbitrage sunflower buyers (K-State)</li>
+        <li><strong>Caveat:</strong> the classic arbitrage model assumed several reachable buyers; here it starts as one — that's why B waits for year two and a second outlet</li>
+      </ul></div>
+    <div class="card"><span class="tag later">2029 · evaluate at ≥5,000 ac</span>
+      <h3>C — Birdseed / deer-plot bagging JV</h3>
+      <ul>
+        <li>Cleaning + screening + bagging line at or near the elevator (a birdseed line omits the costly dehull/polish/color-sort stages of a confection line)</li>
+        <li>Bagged black-oil birdseed + deer-plot seed sold to regional feed stores, co-ops, hunters — the Delta is prime deer country</li>
+        <li><strong>Every bag sold locally erases the whole $3.60/cwt freight penalty</strong></li>
+        <li>Capital $150–500k placeholder — vendor quotes required first; simplest food-safety burden (not human food)</li>
+      </ul></div>
   </div>
+  <p style="margin-top:1rem"><strong>Sequence: A → B → C.</strong> Prove the crop and buyer with zero risk, add merchandising margin once quality history exists, bring processing local only when volume justifies it.</p>
 </section>
 
-<!-- 5 · Viserion economics -->
-<section class="slide" id="s5">
+<!-- 6 · Viserion economics -->
+<section class="slide" id="s6">
   <p class="eyebrow">The model — Viserion side</p>
   <h2>Fee income scales cleanly; setup pays back in a season or two</h2>
   <hr class="rule">
   <div class="twocol">
     <div>
-      <div class="ctitle" style="font-size:.9rem;font-weight:600">Toll fee stack, $/cwt</div>
+      <div class="ctitle" style="font-size:.88rem;font-weight:600">Toll fee stack, $/cwt (Structure A)</div>
       <table>
         <tbody>
-          <tr><td>Receiving / handling</td><td class="num">0.45</td></tr>
-          <tr><td>Drying (avg 3 points)</td><td class="num">0.50</td></tr>
-          <tr><td>Storage (2 mo avg)</td><td class="num">0.30</td></tr>
-          <tr><td>Freight coordination</td><td class="num">0.10</td></tr>
-          <tr><td><strong>Fee revenue</strong></td><td class="num"><strong>1.35</strong></td></tr>
-          <tr><td>Variable cost</td><td class="num">(0.55)</td></tr>
-          <tr><td><strong>Contribution</strong></td><td class="num"><strong class="pos">0.80</strong></td></tr>
+          <tr><td>Receiving / handling / grading</td><td class="num">0.45</td></tr>
+          <tr><td>Drying (avg 3 points removed)</td><td class="num">0.50</td></tr>
+          <tr><td>Storage ($0.15/cwt/mo × 2 mo avg)</td><td class="num">0.30</td></tr>
+          <tr><td>Freight coordination (freight itself at cost)</td><td class="num">0.10</td></tr>
+          <tr class="total"><td>Fee revenue</td><td class="num">1.35</td></tr>
+          <tr><td>Variable cost (labor, energy, shrink, wear, fines cleanout)</td><td class="num">(0.55)</td></tr>
+          <tr class="total"><td>Contribution</td><td class="num"><span class="pos">0.80</span></td></tr>
         </tbody>
       </table>
+      <p class="note" style="margin-top:.8rem">Fees benchmarked to specialty-grain tolls; drying costs more per cwt than corn (more points, more housekeeping labor) — priced accordingly.</p>
     </div>
-    <div class="chart" role="img" aria-label="Annual contribution to Viserion: 25,600 dollars at 2,000 acres; 64,000 at 5,000 acres; 128,000 at 10,000 acres">
-      <div class="ctitle">Annual contribution by contracted acreage</div>
-      <div class="brow"><span class="blab">Pilot · 2,000 ac</span><div class="btrack"><div class="bfill gold" style="width:20%"><span class="bval">$25,600</span></div><span class="tip">32,000 cwt · 64 truckloads</span></div></div>
-      <div class="brow"><span class="blab">Scale · 5,000 ac</span><div class="btrack"><div class="bfill gold" style="width:50%"><span class="bval">$64,000</span></div><span class="tip">80,000 cwt · 160 truckloads</span></div></div>
-      <div class="brow"><span class="blab">Target · 10,000 ac</span><div class="btrack"><div class="bfill gold" style="width:100%"><span class="bval">$128,000</span></div><span class="tip">160,000 cwt · 320 truckloads</span></div></div>
-      <p class="note" style="margin-top:1rem">Against $25–75k one-time setup → payback in 1–3 seasons even at pilot scale. Structure B merchandising margin comes on top.</p>
+    <div>
+      <div class="scrollx"><table>
+        <thead><tr><th></th><th class="num">Pilot 2,000 ac</th><th class="num">Scale 5,000 ac</th><th class="num">Target 10,000 ac</th></tr></thead>
+        <tbody>
+          <tr><td>Volume (16 cwt/ac)</td><td class="num">32,000 cwt</td><td class="num">80,000 cwt</td><td class="num">160,000 cwt</td></tr>
+          <tr><td>Truckloads out</td><td class="num">64</td><td class="num">160</td><td class="num">320</td></tr>
+          <tr><td>Fee revenue</td><td class="num">$43,200</td><td class="num">$108,000</td><td class="num">$216,000</td></tr>
+          <tr><td>Variable cost</td><td class="num">($17,600)</td><td class="num">($44,000)</td><td class="num">($88,000)</td></tr>
+          <tr class="total"><td>Contribution</td><td class="num">$25,600</td><td class="num">$64,000</td><td class="num">$128,000</td></tr>
+        </tbody>
+      </table></div>
+      <div class="chart" role="img" aria-label="Annual contribution to Viserion: 25,600 dollars at 2,000 acres; 64,000 at 5,000 acres; 128,000 at 10,000 acres">
+        <div class="brow"><span class="blab">Pilot · 2,000 ac</span><div class="btrack"><div class="bfill gold" style="width:20%"><span class="bval">$25,600</span></div><span class="tip">32,000 cwt · 64 truckloads · one bin</span></div></div>
+        <div class="brow"><span class="blab">Scale · 5,000 ac</span><div class="btrack"><div class="bfill gold" style="width:50%"><span class="bval">$64,000</span></div><span class="tip">80,000 cwt · 160 truckloads</span></div></div>
+        <div class="brow"><span class="blab">Target · 10,000 ac</span><div class="btrack"><div class="bfill gold" style="width:100%"><span class="bval">$128,000</span></div><span class="tip">160,000 cwt · 320 truckloads</span></div></div>
+      </div>
+      <p class="note">Against $25–75k one-time setup → payback in 1–3 seasons even at pilot scale. Structure B adds $0.20–0.50/cwt merchandising margin on top ($6.4k–$80k/yr across the tiers). Per-bushel handling cost falls steeply with throughput (OSU curve), so margins improve as acres grow.</p>
     </div>
   </div>
 </section>
 
-<!-- 6 · Grower economics -->
-<section class="slide" id="s6">
+<!-- 7 · Grower economics -->
+<section class="slide" id="s7">
   <p class="eyebrow">The model — grower side</p>
   <h2>What recruits the acres</h2>
   <hr class="rule">
-  <p class="lead">Farmgate = $22.75/cwt delivered − $3.60 freight − $1.35 fees = <strong>$17.80/cwt</strong>. High-oleic pays a 2% premium per oil point above 40% — Delta agronomy at 45% oil adds ~10% to price for free.</p>
-  <div class="chart" role="img" aria-label="Grower net per acre before land: dryland 35 dollars, dryland with oil premium 71 dollars, irrigated with premium 157 dollars">
-    <div class="ctitle">Grower net, $/acre before land</div>
-    <div class="brow"><span class="blab">Dryland · 1,600 lb</span><div class="btrack"><div class="bfill gold" style="width:22%"><span class="bval">+$35</span></div><span class="tip">$285 revenue − $250 cost</span></div></div>
-    <div class="brow"><span class="blab">+ 45% oil premium</span><div class="btrack"><div class="bfill gold" style="width:45%"><span class="bval">+$71</span></div><span class="tip">Premium adds ~$2.28/cwt</span></div></div>
-    <div class="brow"><span class="blab">Irrigated · 2,200 lb</span><div class="btrack"><div class="bfill gold" style="width:100%"><span class="bval">+$157</span></div><span class="tip">$452 revenue − $295 cost</span></div></div>
-  </div>
-  <p class="note">Honest read: base-case dryland loses to a good soybean year. Sunflower recruits acres as a rotation / marginal-ground play, and with the oil premium and irrigation. Minimum viable program: ~2,000 contracted acres (≈64 loads).</p>
-</section>
-
-<!-- 7 · Barge card -->
-<section class="slide" id="s7">
-  <p class="eyebrow">The exclusive edge</p>
-  <h2>The barge card</h2>
-  <hr class="rule">
-  <p class="lead">If an export or Gulf-side buyer materializes, Lake Providence loads barges at roughly a quarter of the truck cost to Lubbock — and only a river elevator can offer that.</p>
-  <div class="chart" role="img" aria-label="Outbound freight per cwt: truck to Lubbock 3.60 dollars, barge to Gulf about 1 dollar">
-    <div class="ctitle">Outbound freight, $/cwt</div>
-    <div class="brow"><span class="blab">Truck → Lubbock</span><div class="btrack"><div class="bfill gold" style="width:100%"><span class="bval">$3.60</span></div><span class="tip">$1,800 per 500-cwt load, ~600 mi (needs spot quote)</span></div></div>
-    <div class="brow"><span class="blab">Barge → Gulf</span><div class="btrack"><div class="bfill teal" style="width:28%"><span class="bval">~$1.00</span></div><span class="tip">Typical lower-Mississippi oilseed rate (needs quote)</span></div></div>
-    <div class="legend"><span><span class="sw" style="background:var(--gold)"></span>Truck program (base case)</span><span><span class="sw" style="background:var(--teal)"></span>Barge option (Viserion-only)</span></div>
-  </div>
-  <div class="stat-row" style="margin-top:2rem">
-    <div class="stat"><div class="big">~$42<small> /acre</small></div><div class="cap">what the barge lane is worth to growers — it turns a marginal crop into a solid one</div></div>
-  </div>
-</section>
-
-<!-- 8 · Sensitivity + honest case against -->
-<section class="slide" id="s8">
-  <p class="eyebrow">Stress test</p>
-  <h2>Where it breaks — and what we do about it</h2>
-  <hr class="rule">
+  <p class="lead">Farmgate = $22.75 delivered − $3.60 freight − $1.35 fees = <strong>$17.80/cwt</strong>. High-oleic pays +2% per oil point above 40% — Delta agronomy at 44–46% oil adds ~10% to price at no extra cost.</p>
   <div class="twocol">
     <div>
-      <div class="ctitle" style="font-size:.9rem;font-weight:600">Grower net $/ac (dryland, 16 cwt, no premium)</div>
-      <div class="scrollx"><table>
-        <thead><tr><th>Delivered price</th><th class="num">Truck ($3.60)</th><th class="num">Barge ($1.00)</th></tr></thead>
+      <div class="ctitle" style="font-size:.88rem;font-weight:600">Dryland production budget, $/ac (regional analog)</div>
+      <table>
         <tbody>
-          <tr><td>$20.00</td><td class="num negt">−$9</td><td class="num pos">+$33</td></tr>
-          <tr><td>$22.75 <span class="note">(current)</span></td><td class="num pos">+$35</td><td class="num pos">+$77</td></tr>
-          <tr><td>$25.00</td><td class="num pos">+$71</td><td class="num pos">+$113</td></tr>
-          <tr><td>$28.00</td><td class="num pos">+$119</td><td class="num pos">+$161</td></tr>
+          <tr><td>Seed (high-oleic hybrid)</td><td class="num">30</td></tr>
+          <tr><td>Fertility</td><td class="num">70</td></tr>
+          <tr><td>Herbicide program</td><td class="num">40</td></tr>
+          <tr><td>Insecticide (head moth scouting)</td><td class="num">15</td></tr>
+          <tr><td>Planting / spraying ops</td><td class="num">45</td></tr>
+          <tr><td>Harvest (pan header or corn head adapt)</td><td class="num">40</td></tr>
+          <tr><td>Crop insurance</td><td class="num">10</td></tr>
+          <tr class="total"><td>Total (before land)</td><td class="num">250</td></tr>
         </tbody>
-      </table></div>
-      <p class="note" style="margin-top:.75rem">Prices moved $16.60→$31.40/cwt in 2021. Act-of-God contracts locked before planting are non-negotiable.</p>
+      </table>
+      <p class="note" style="margin-top:.8rem">Irrigated adds ~$45/ac (water, extra fertility, harvest volume) → ~$295/ac.</p>
     </div>
     <div>
-      <div class="ctitle" style="font-size:.9rem;font-weight:600">The honest case against — and mitigations</div>
-      <ul style="font-size:.92rem">
-        <li><strong>One-buyer risk.</strong> Program realistically sells to Red River Lubbock first. → Signed offtake before any bin commits; NSA directory for a second outlet.</li>
-        <li><strong>Thin grower math</strong> at base case. → Oil premium, irrigated acres, rotation ground.</li>
-        <li><strong>Freight is an extrapolation.</strong> A $4.50/cwt spot quote breaks dryland. → Go/no-go gate.</li>
-        <li><strong>Insurance</strong> must sign off on dryer fire protocol. → Early underwriter conversation.</li>
-        <li><strong>Small headline dollars</strong> for a Pinnacle-backed platform. → The pitch is zero-risk fees, slack-window utilization, originations, and barge option value.</li>
+      <div class="chart" role="img" aria-label="Grower net per acre before land: dryland 35 dollars, dryland with oil premium 71 dollars, irrigated with premium 157 dollars">
+        <div class="ctitle">Grower net, $/acre before land</div>
+        <div class="brow"><span class="blab">Dryland · 1,600 lb</span><div class="btrack"><div class="bfill gold" style="width:22%"><span class="bval">+$35</span></div><span class="tip">16 cwt × $17.80 = $285 − $250</span></div></div>
+        <div class="brow"><span class="blab">+ 45% oil premium</span><div class="btrack"><div class="bfill gold" style="width:45%"><span class="bval">+$71</span></div><span class="tip">Premium ≈ +$2.28/cwt ⇒ +$36/ac</span></div></div>
+        <div class="brow"><span class="blab">Irrigated 2,200 lb + prem</span><div class="btrack"><div class="bfill gold" style="width:100%"><span class="bval">+$157</span></div><span class="tip">22 cwt × $20.55 ≈ $452 − $295</span></div></div>
+      </div>
+      <h3>Honest read</h3>
+      <ul style="font-size:.9rem">
+        <li>Base-case dryland <strong>loses to a good soybean year</strong> — sunflower recruits as rotation ground, marginal dryland, and irrigated acres chasing the premium.</li>
+        <li>Agronomic sweeteners: deep taproot mines residual N and moisture; earlier harvest spreads combine hours; excellent double-crop / rotation fit behind wheat.</li>
+        <li><strong>Minimum viable program: ~2,000 contracted acres (≈64 loads)</strong> — below that, bin opportunity cost and procedure overhead aren't worth the elevator's trouble.</li>
       </ul>
     </div>
   </div>
 </section>
 
-<!-- 9 · Gates & ask -->
+<!-- 8 · Barge card -->
+<section class="slide" id="s8">
+  <p class="eyebrow">The exclusive edge</p>
+  <h2>The barge card</h2>
+  <hr class="rule">
+  <p class="lead">The base case trucks everything 600 miles west. But Lake Providence is a river terminal: if an export or Gulf-side buyer materializes — Mexico and EU birdseed demand both exist — it loads barges at roughly a quarter of the truck cost. Only a river elevator can offer that, and there is no other river elevator pitching sunflowers.</p>
+  <div class="chart" role="img" aria-label="Outbound freight per cwt: truck to Lubbock 3.60 dollars, barge to Gulf about 1 dollar">
+    <div class="ctitle">Outbound freight, $/cwt</div>
+    <div class="brow"><span class="blab">Truck → Lubbock</span><div class="btrack"><div class="bfill gold" style="width:100%"><span class="bval">$3.60 (est. — needs spot quote)</span></div><span class="tip">$1,800 per 500-cwt load, ~600 mi</span></div></div>
+    <div class="brow"><span class="blab">Barge → Gulf</span><div class="btrack"><div class="bfill teal" style="width:28%"><span class="bval">~$1.00 (needs quote)</span></div><span class="tip">Typical lower-Mississippi oilseed rate to NOLA transload</span></div></div>
+    <div class="legend"><span><span class="sw" style="background:var(--gold)"></span>Truck program (base case)</span><span><span class="sw" style="background:var(--teal)"></span>Barge option (Viserion-only)</span></div>
+  </div>
+  <div class="stat-row" style="margin-top:1.5rem">
+    <div class="stat"><div class="big">~$2.60<small> /cwt saved</small></div><div class="cap">freight advantage over any truck-based competitor</div></div>
+    <div class="stat"><div class="big">~$42<small> /acre</small></div><div class="cap">what the barge lane is worth to growers — turns a marginal crop solid</div></div>
+    <div class="stat"><div class="big">+$33<small> /ac at $20</small></div><div class="cap">barge keeps growers positive even at the price where the truck program goes negative</div></div>
+  </div>
+  <p class="note">Status: option, not base case — no Gulf/export buyer identified yet. Finding one is part of Gate 2 and the winter-2027 scale review. Even unexercised, the option disciplines Lubbock's bid.</p>
+</section>
+
+<!-- 9 · Stress test -->
 <section class="slide" id="s9">
-  <p class="eyebrow">The ask</p>
+  <p class="eyebrow">Stress test</p>
+  <h2>Where it breaks — and what we do about it</h2>
+  <hr class="rule">
+  <div class="twocol">
+    <div>
+      <div class="ctitle" style="font-size:.88rem;font-weight:600">Grower net $/ac (dryland, 16 cwt, no premium)</div>
+      <div class="scrollx"><table>
+        <thead><tr><th>Delivered price</th><th class="num">Truck ($3.60)</th><th class="num">Barge ($1.00)</th></tr></thead>
+        <tbody>
+          <tr><td>$20.00</td><td class="num negt">−$9</td><td class="num pos">+$33</td></tr>
+          <tr><td>$22.75 <span class="note">(current ref)</span></td><td class="num pos">+$35</td><td class="num pos">+$77</td></tr>
+          <tr><td>$25.00</td><td class="num pos">+$71</td><td class="num pos">+$113</td></tr>
+          <tr><td>$28.00</td><td class="num pos">+$119</td><td class="num pos">+$161</td></tr>
+        </tbody>
+      </table></div>
+      <div class="ctitle" style="font-size:.88rem;font-weight:600;margin-top:1.2rem">Freight sensitivity (at $22.75 delivered)</div>
+      <div class="scrollx"><table>
+        <thead><tr><th>Truck spot quote</th><th class="num">Grower net $/ac</th></tr></thead>
+        <tbody>
+          <tr><td>$3.00/cwt</td><td class="num pos">+$45</td></tr>
+          <tr><td>$3.60/cwt (model)</td><td class="num pos">+$35</td></tr>
+          <tr><td>$4.25/cwt (gate threshold)</td><td class="num pos">+$25</td></tr>
+          <tr><td>$4.50/cwt</td><td class="num pos">+$21</td></tr>
+          <tr><td>$5.00/cwt</td><td class="num pos">+$13</td></tr>
+        </tbody>
+      </table></div>
+      <p class="note" style="margin-top:.7rem">Freight alone doesn't kill dryland — but stacked with a soft price it does: $20 delivered + $4.50 freight = −$23/ac. That combination is the kill condition.</p>
+    </div>
+    <div>
+      <div class="ctitle" style="font-size:.88rem;font-weight:600">The honest case against — and mitigations</div>
+      <ul style="font-size:.9rem">
+        <li><strong>One-buyer risk.</strong> Program realistically sells to Red River Lubbock first; the K-State arbitrage model assumed multiple reachable buyers. → Signed offtake before any bin commits; NSA directory worked for a second outlet; barge option as leverage.</li>
+        <li><strong>Thin grower math</strong> at base case — loses to good soybeans. → Oil premium, irrigated acres, rotation/marginal ground; AOG clause caps downside.</li>
+        <li><strong>Price volatility:</strong> $16.60→$31.40/cwt in one season (2021). → AOG contracts locked pre-plant, non-negotiable.</li>
+        <li><strong>Freight is an extrapolation</strong> past USDA's 200-mi data ceiling. → Gate 2 spot quote before term sheet.</li>
+        <li><strong>Fire/insurance:</strong> fines are a real dryer hazard. → Written daily-cleanout protocol; underwriter conversation early (Gate 3), not after a claim.</li>
+        <li><strong>Small headline dollars</strong> for a Pinnacle-backed platform ($26k–$128k). → The pitch is zero-risk fee income, slack-window utilization, grower originations in a parish Viserion already competes in for corn/beans, and barge option value.</li>
+        <li><strong>Unresearched (not disproven):</strong> permits, LDAF seed/feed licensing, labor, deer-plot retail pricing — scoped in the VAPG-funded study.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 10 · Gates -->
+<section class="slide" id="s10">
+  <p class="eyebrow">Risk controls</p>
   <h2>Four gates before anyone commits a dollar</h2>
   <hr class="rule">
   <div class="scrollx"><table>
-    <thead><tr><th>#</th><th>Gate</th><th>Kill condition</th></tr></thead>
+    <thead><tr><th>#</th><th>Gate</th><th>What "pass" looks like</th><th>Kill condition</th></tr></thead>
     <tbody>
-      <tr><td>1</td><td>Red River (Lubbock) offtake commitment — price, spec, volume</td><td>No contract → no program</td></tr>
-      <tr><td>2</td><td>Real freight quotes: truck spot to Lubbock; barge to NOLA</td><td>Truck &gt; ~$4.25/cwt with no barge buyer</td></tr>
-      <tr><td>3</td><td>Viserion ops + insurance sign-off on sunflower drying protocol</td><td>Underwriting surprise</td></tr>
-      <tr><td>4</td><td>2,000 acres of grower letters of intent at modeled farmgate</td><td>Growers won't plant → program dies</td></tr>
+      <tr><td>1</td><td>Red River (Lubbock) offtake</td><td>Written commitment: delivered price, quality spec (oil %, moisture, FM), volume cap, AOG availability</td><td>No contract → no program. Full stop.</td></tr>
+      <tr><td>2</td><td>Real freight quotes</td><td>Truck spot Lake Providence→Lubbock ≤ ~$4.25/cwt; barge oilseed rate to NOLA quoted</td><td>Truck &gt; $4.25 with no barge buyer identified</td></tr>
+      <tr><td>3</td><td>Ops + insurance sign-off</td><td>Viserion underwriter accepts the written sunflower drying/fines protocol at no material premium change</td><td>Underwriting surprise or exclusion</td></tr>
+      <tr><td>4</td><td>Grower commitment</td><td>2,000 acres of LOIs at modeled farmgate ($17.80/cwt base)</td><td>Growers won't plant → program dies regardless of Viserion's interest</td></tr>
     </tbody>
   </table></div>
-  <p class="lead" style="margin-top:1.5rem"><strong>Today's ask:</strong> a working session with Lake Providence management to agree a Structure-A fee schedule and one segregated bin for a 2,000-acre 2027 pilot — contingent on gates 1–4. Term sheet by December; planting March 2027; first loads out August 2027.</p>
-  <p class="note">All figures are planning estimates from the July 2026 feasibility study (late-2025 bids, USDA freight extrapolations). Gates 1–2 replace the fragile numbers with real ones. A USDA VAPG planning grant (~$75k) can fund the professional study.</p>
+  <h3>Outside money that de-risks the study</h3>
+  <ul style="font-size:.9rem">
+    <li><strong>USDA VAPG planning grant</strong> — up to ~$75k, 1:1 match, funds exactly the professional feasibility study this plan needs; working-capital tranche (~$250k) available later. Confirm current NOFA.</li>
+    <li><strong>LDAF RFSI</strong> — Louisiana awarded $4.6M+ in 2024 for middle-of-supply-chain processing/storage; fits the future food-oil pathway (not birdseed). Watch for the next round.</li>
+    <li><strong>USDA REAP / LED rural programs</strong> — standard complements for Structure C equipment.</li>
+  </ul>
 </section>
 
-<div class="counter" id="counter">1 / 9</div>
+<!-- 11 · Timeline & ask -->
+<section class="slide" id="s11">
+  <p class="eyebrow">The ask</p>
+  <h2>Timeline to first loads out</h2>
+  <hr class="rule">
+  <div class="scrollx"><table>
+    <thead><tr><th>When</th><th>Milestone</th></tr></thead>
+    <tbody>
+      <tr><td>Aug–Oct 2026</td><td>Buyer calls (Gate 1) · truck + barge quotes (Gate 2) · <strong>this working session</strong> with Lake Providence management</td></tr>
+      <tr><td>Nov–Dec 2026</td><td>Term sheet: Structure-A fee schedule, one segregated bin, written drying protocol · insurance review (Gate 3) · grower LOIs (Gate 4)</td></tr>
+      <tr><td>Jan–Feb 2027</td><td>AOG contracts signed grower↔buyer · VAPG planning-grant application</td></tr>
+      <tr><td>Mar–Apr 2027</td><td>Plant pilot — target 2,000 acres high-oleic</td></tr>
+      <tr><td>Aug–Sep 2027</td><td>Harvest → receive → dry → store → <strong>first loads to Lubbock</strong></td></tr>
+      <tr><td>Winter 2027</td><td>Scale review: quality history, buyer performance, grower re-signs → Structure B local bid for 2028; barge/export buyer search; Structure C vendor quotes if ≥5,000 ac committed</td></tr>
+    </tbody>
+  </table></div>
+  <p class="lead" style="margin-top:1.4rem"><strong>Today's ask:</strong> agreement in principle on a Structure-A fee schedule and one segregated bin for a 2,000-acre 2027 pilot — fully contingent on Gates 1–4. Viserion's exposure until all four clear: a few meetings and a procedure review.</p>
+  <p class="note">All figures are planning estimates from the July 2026 verified feasibility study (late-2025 bids; USDA freight extrapolated past 200 mi; dated elevator cost curves; analog production budgets). Gates 1–2 replace the fragile numbers with signed and quoted reality. Full model: VISERION_PLAN.md · research: REPORT.md.</p>
+</section>
+
+<div class="counter" id="counter">1 / 11</div>
 <div class="hint">↑ ↓ or scroll</div>
 
 <script>
