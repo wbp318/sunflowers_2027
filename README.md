@@ -12,20 +12,43 @@ Sunflowers grow well here, but there is **no local processing or buyer** — thi
 
 ```mermaid
 flowchart TD
-    G[Delta growers<br/>~2,000 ac pilot, AOG contracts signed pre-plant] -->|harvest Aug–Sep| V
-
-    subgraph V[Viserion Grain — Lake Providence elevator]
-        R[Receive, weigh, grade<br/>$0.45/cwt] --> D[Dry to 10% moisture<br/>daily fines housekeeping<br/>$0.50/cwt]
-        D --> S[Segregated bin storage<br/>identity-preserved high-oleic<br/>$0.30/cwt]
+    subgraph LEGEND[Legend]
+        direction LR
+        LG1[Base-case flow — solid arrows]:::base --> LG2[Money outcome]:::money
+        LG3[Option / future — dashed arrows]:::opt -.-> LG4{{Gate / precondition}}:::gate
     end
 
-    S -->|truck $3.60/cwt<br/>500 cwt/load| L[Red River Commodities<br/>Lubbock, TX — birdseed<br/>base case]
-    S -.->|barge ~$1.00/cwt<br/>Viserion-only option| N[Gulf / export buyer<br/>worth ~$42/ac if found]
-    S -.->|2029, if ≥5,000 ac| C[On-site cleaning + bagging JV<br/>regional birdseed & deer-plot seed<br/>no freight penalty]
+    GATES{{"GATES — all four before any commitment:
+    1 · Signed offtake with Red River (Lubbock)
+    2 · Real freight quotes (truck spot + barge)
+    3 · Viserion insurance sign-off on dryer protocol
+    4 · 2,000 acres of grower letters of intent"}}:::gate
 
-    L --> P[Grower farmgate ≈ $17.80/cwt<br/>Viserion contribution ≈ $0.80/cwt]
+    GATES -.->|all four cleared| PLANT
 
-    GATES{{Gates before commitment:<br/>1. signed offtake · 2. real freight quotes<br/>3. insurance sign-off · 4. 2,000 ac of LOIs}} -.-> G
+    PLANT[Plant pilot — Mar–Apr 2027<br/>~2,000 ac high-oleic, AOG contracts<br/>signed with buyer pre-plant]:::base
+    PLANT -->|grow season<br/>oil premium: +2%/pt over 40% oil| H[Harvest Aug–early Sep<br/>1,600 lb/ac dryland · 2,200 irrigated<br/>ahead of the corn/soybean rush]:::base
+    H -->|~64 grower truckloads<br/>within ~50 mi| REC
+
+    subgraph V[Viserion Grain — Lake Providence river elevator]
+        REC[Receive · weigh · grade<br/>fee $0.45/cwt]:::base --> DRY[Dry to 10% moisture<br/>7–8% for summer carry<br/>daily fines housekeeping = fire control<br/>fee $0.50/cwt]:::base
+        DRY --> STO[Segregated bin ~100k bu<br/>identity-preserved high-oleic<br/>fee $0.30/cwt · 2 mo avg]:::base
+        STO --> MER[Freight coordination desk<br/>fee $0.10/cwt<br/>total fees $1.35/cwt · contribution ~$0.80/cwt]:::base
+    end
+
+    MER -->|truck $3.60/cwt est.<br/>500 cwt/load · ~600 mi| LUB[Red River Commodities<br/>Lubbock, TX — birdseed<br/>BASE CASE · delivered ~$22.75/cwt]:::base
+    MER -.->|barge ~$1.00/cwt<br/>river-elevator exclusive| GULF[Gulf / export buyer<br/>saves $2.60/cwt ≈ $42/ac<br/>if buyer found — gate 2]:::opt
+    MER -.->|2029 · only if ≥5,000 ac<br/>and vendor quotes check out| JV[Cleaning + bagging JV<br/>regional birdseed & deer-plot seed<br/>$150–500k capital · no freight penalty]:::opt
+
+    LUB --> OUT[Grower farmgate ≈ $17.80/cwt → +$35 to +$157/ac<br/>Viserion contribution $25.6k → $128k/yr at 2k → 10k ac]:::money
+    GULF -.-> OUT
+    JV -.-> SCALE[Scale decision — winter 2027:<br/>Structure B merchandising · more acres · barge lane]:::opt
+    OUT --> SCALE
+
+    classDef base fill:#f5e6c4,stroke:#b8841c,color:#20261f
+    classDef opt fill:#dceee8,stroke:#0e8a6b,color:#20261f,stroke-dasharray:4 3
+    classDef money fill:#0e8a6b,stroke:#0a6b53,color:#ffffff
+    classDef gate fill:#fdf3f0,stroke:#b4452e,color:#20261f
 ```
 
 Generated 2026-07-20 from a multi-source deep-research pass (22 sources fetched, 76 claims extracted, 25 adversarially verified: 20 confirmed, 5 refuted).
