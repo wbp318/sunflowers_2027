@@ -1,0 +1,152 @@
+# Auto-normalize line endings for anything git deems text
+* text=auto
+
+# ------------------------------------------------------------------
+# Docs & data
+# ------------------------------------------------------------------
+*.md        text diff=markdown linguist-language=Markdown
+*.mdx       text diff=markdown
+*.txt       text
+*.rst       text
+*.tex       text diff=tex linguist-language=TeX
+*.adoc      text
+*.csv       text
+*.tsv       text
+*.json      text linguist-language=JSON
+*.jsonc     text
+*.yml       text linguist-language=YAML
+*.yaml      text linguist-language=YAML
+*.toml      text linguist-language=TOML
+*.xml       text linguist-language=XML
+*.ini       text
+*.cfg       text
+*.conf      text
+
+# ------------------------------------------------------------------
+# Web
+# ------------------------------------------------------------------
+*.html      text diff=html linguist-language=HTML
+*.htm       text diff=html
+*.css       text diff=css linguist-language=CSS
+*.scss      text diff=css linguist-language=SCSS
+*.sass      text linguist-language=Sass
+*.less      text linguist-language=Less
+*.js        text linguist-language=JavaScript
+*.mjs       text linguist-language=JavaScript
+*.cjs       text linguist-language=JavaScript
+*.jsx       text linguist-language=JavaScript
+*.ts        text linguist-language=TypeScript
+*.tsx       text linguist-language=TSX
+*.vue       text linguist-language=Vue
+*.svelte    text linguist-language=Svelte
+
+# ------------------------------------------------------------------
+# General-purpose languages
+# ------------------------------------------------------------------
+*.py        text diff=python linguist-language=Python
+*.ipynb     text linguist-language=Jupyter\ Notebook
+*.rb        text diff=ruby linguist-language=Ruby
+*.php       text diff=php linguist-language=PHP
+*.pl        text diff=perl linguist-language=Perl
+*.pm        text diff=perl
+*.lua       text linguist-language=Lua
+*.r         text linguist-language=R
+*.R         text linguist-language=R
+*.jl        text linguist-language=Julia
+*.dart      text linguist-language=Dart
+*.ex        text diff=elixir linguist-language=Elixir
+*.exs       text diff=elixir linguist-language=Elixir
+*.erl       text linguist-language=Erlang
+*.hs        text linguist-language=Haskell
+*.ml        text linguist-language=OCaml
+*.clj       text linguist-language=Clojure
+*.cljs      text linguist-language=Clojure
+*.scala     text linguist-language=Scala
+*.groovy    text linguist-language=Groovy
+*.nim       text linguist-language=Nim
+*.zig       text linguist-language=Zig
+*.v         text linguist-language=V
+*.f90       text diff=fortran linguist-language=Fortran
+*.f95       text diff=fortran
+
+# ------------------------------------------------------------------
+# Systems / compiled languages
+# ------------------------------------------------------------------
+*.c         text diff=cpp linguist-language=C
+*.h         text diff=cpp linguist-language=C
+*.cpp       text diff=cpp linguist-language=C++
+*.cc        text diff=cpp linguist-language=C++
+*.cxx       text diff=cpp linguist-language=C++
+*.hpp       text diff=cpp linguist-language=C++
+*.cs        text diff=csharp linguist-language=C#
+*.java      text diff=java linguist-language=Java
+*.kt        text diff=kotlin linguist-language=Kotlin
+*.kts       text diff=kotlin
+*.go        text diff=golang linguist-language=Go
+*.rs        text diff=rust linguist-language=Rust
+*.swift     text diff=swift linguist-language=Swift
+*.m         text diff=objc linguist-language=Objective-C
+*.mm        text diff=objc
+*.asm       text linguist-language=Assembly
+*.s         text linguist-language=Assembly
+
+# ------------------------------------------------------------------
+# Shell & scripting
+# ------------------------------------------------------------------
+*.sh        text eol=lf diff=bash linguist-language=Shell
+*.bash      text eol=lf diff=bash linguist-language=Shell
+*.zsh       text eol=lf linguist-language=Shell
+*.fish      text eol=lf linguist-language=fish
+*.ps1       text linguist-language=PowerShell
+*.psm1      text linguist-language=PowerShell
+*.psd1      text linguist-language=PowerShell
+*.bat       text eol=crlf linguist-language=Batchfile
+*.cmd       text eol=crlf linguist-language=Batchfile
+
+# ------------------------------------------------------------------
+# Database & query
+# ------------------------------------------------------------------
+*.sql       text linguist-language=SQL
+*.graphql   text linguist-language=GraphQL
+*.prisma    text
+
+# ------------------------------------------------------------------
+# Build & infra
+# ------------------------------------------------------------------
+Makefile    text linguist-language=Makefile
+*.mk        text linguist-language=Makefile
+Dockerfile  text linguist-language=Dockerfile
+*.dockerfile text linguist-language=Dockerfile
+*.tf        text linguist-language=HCL
+*.hcl       text linguist-language=HCL
+*.gradle    text linguist-language=Gradle
+*.cmake     text linguist-language=CMake
+CMakeLists.txt text linguist-language=CMake
+*.proto     text linguist-language=Protocol\ Buffer
+
+# ------------------------------------------------------------------
+# Binary — never diff or normalize
+# ------------------------------------------------------------------
+*.pdf       binary
+*.png       binary
+*.jpg       binary
+*.jpeg      binary
+*.gif       binary
+*.webp      binary
+*.svg       text linguist-language=SVG
+*.ico       binary
+*.woff      binary
+*.woff2     binary
+*.ttf       binary
+*.otf       binary
+*.zip       binary
+*.gz        binary
+*.tar       binary
+*.7z        binary
+*.exe       binary
+*.dll       binary
+*.so        binary
+*.dylib     binary
+*.xlsx      binary
+*.docx      binary
+*.pptx      binary
