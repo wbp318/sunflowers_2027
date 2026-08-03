@@ -40,7 +40,12 @@ flowchart TD
     3 · Viserion insurance sign-off on dryer protocol
     4 · 2,000 acres of grower letters of intent"}}:::gate
 
-    subgraph PRE[Phase 0 — Aug–Dec 2026 · Deal-making]
+    subgraph PRE[PHASE 0]
+        P0[Deal-making · Aug–Dec 2026]:::base
+        P0 --> B1
+        P0 --> B2
+        P0 --> B3
+        P0 --> B4
         B1[Call Red River Commodities Lubbock<br/>+ NSA buyer directory second outlets<br/>ask: delivered price · quality spec · volume cap]:::base
         B2[Freight quotes:<br/>truck spot Lake Providence→Lubbock<br/>barge Lake Providence→NOLA oilseed rate]:::base
         B3[Viserion working session:<br/>Structure A fee schedule · one segregated bin<br/>ops + insurer review of dryer fire protocol]:::base
@@ -56,13 +61,17 @@ flowchart TD
     GATES -.->|all four cleared → term sheet Dec 2026<br/>AOG contracts signed grower↔buyer Jan–Feb 2027| PLANT
     GATES -.->|any gate fails| KILL[STOP — no capital committed<br/>kill conditions: no offtake · truck >$4.25/cwt<br/>with no barge buyer · insurer balks · <2,000 ac]:::gate
 
-    subgraph FARM[Phase 1 — 2027 crop year · Grower side]
+    subgraph FARM[PHASE 1]
+        P1[Grower side · 2027 crop year]:::base
+        P1 --> PLANT
         PLANT[Plant Mar–Apr 2027 · high-oleic varieties<br/>seed $30 + fert $70 + chem $55 + ops $45<br/>+ harvest $40 + ins $10 ≈ $250/ac dryland]:::base
         PLANT -->|"oil premium: +2% price per point >40% oil<br/>45% oil ⇒ +$2.28/cwt ⇒ +$36/ac free"| H[Harvest Aug–early Sep<br/>dryland 1,600 lb/ac = 16 cwt<br/>irrigated 2,000–2,200 lb/ac<br/>lands BEFORE corn/soybean rush]:::base
         H -->|combine at 12–15% moisture<br/>haul wet within ~50 mi| REC
     end
 
-    subgraph V[Phase 2 — Viserion Lake Providence elevator — ex Zen-Noh/Bunge river terminal]
+    subgraph V[PHASE 2]
+        P2[Viserion Lake Providence elevator<br/>ex Zen-Noh/Bunge river terminal]:::base
+        P2 --> REC
         REC[RECEIVE · weigh · grade · dock for FM<br/>fee $0.45/cwt<br/>uses existing pits + scales, slack season]:::base
         REC --> DRY[DRY to 10% moisture — 7–8% if summer carry<br/>avg 3 points removed · fee $0.50/cwt<br/>⚠ fines = fire risk: DAILY dryer cleanout<br/>NDSU: housekeeping, not temperature]:::base
         DRY --> STO[STORE segregated ~100k bu bin<br/>holds ~30,000 cwt at 28–32 lb/bu test weight<br/>identity-preserved · fee $0.15/cwt/mo × 2 mo = $0.30]:::base
